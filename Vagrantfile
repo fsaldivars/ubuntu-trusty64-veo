@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "../", "/var/www", owner: "vagrant", group: "vagrant"
 
   config.vm.provider "virtualbox" do |vbox|
+    vbox.name = "local.veo.tv-#{Time.now.to_i}"
     vbox.memory = 1024
     vbox.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
