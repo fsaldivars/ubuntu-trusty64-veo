@@ -4,8 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  #config.vm.box = "rudisimo/ubuntu-trusty64-veo"
-  config.vm.box = "ubuntu-trusty64-veo"
+  config.vm.box = " televisa/ubuntu-trusty64-veo"
 
   config.vm.network "private_network", ip: "10.10.10.101"
   config.vm.network "forwarded_port", guest: 80, host: 8001

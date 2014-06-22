@@ -10,9 +10,12 @@ Download this codebase inside of your `veo.tv` working copy:
 
     git clone https://github.com/rudisimo/vagrant-ubuntu-trusty64-veo vagrant; cd vagrant
 
-Make sure that the following line is inside of your hosts file:
+Make sure that the following lines are inside of your system's `hosts` file.
 
-    10.10.10.101 local.veo.tv
+	10.10.10.101 local.veo.tv
+	10.10.10.101 local.cablevision.veo.tv
+	10.10.10.101 local.cablemas.veo.tv
+	10.10.10.101 local.bluetogo.mx
 
 Create the VM by running:
 
