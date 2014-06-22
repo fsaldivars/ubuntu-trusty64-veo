@@ -12,11 +12,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 9000, host: 9001
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.synced_folder "../", "/var/www", owner: "vagrant", group: "vagrant"
+  config.vm.synced_folder "../", "/var/www", id: "www-root", owner: "vagrant", group: "vagrant"
 
   config.vm.provider "virtualbox" do |vbox|
     vbox.name = "local.veo.tv-#{Time.now.to_i}"
-    vbox.memory = 1024
+    vbox.memory = 512
     vbox.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vbox.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/www-root", "1"]
   end
+
+  config.vm.provision :shell, :path => "scripts/bootstrap.sh"
 end
