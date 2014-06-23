@@ -2,27 +2,6 @@
 
 A custom Ubuntu 14.04 LTS box running a developer LAMP stack for [VEO](http://veo.tv).
 
-## System requirements
-Mac OS X or Linux capable of running VirtualBox. Windows hasn't been certified as a proper host environment for this cookbook. At least 4GB of available memory. Ruby 1.9.3 or higher. Git 1.7.1 or higher.
-
-### Installation steps
-Download this codebase inside of your `veo.tv` working copy:
-
-    git clone https://github.com/rudisimo/vagrant-ubuntu-trusty64-veo vagrant; cd vagrant
-
-Make sure that the following lines are inside of your system's `hosts` file.
-
-	10.10.10.101 local.veo.tv
-	10.10.10.101 local.cablevision.veo.tv
-	10.10.10.101 local.cablemas.veo.tv
-	10.10.10.101 local.bluetogo.mx
-
-Create the VM by running:
-
-    vagrant up
-
-Finally, visit [http://local.veo.tv](http://local.veo.tv) in your browser.
-
 ### Vagrant tips
 Once the provisioning step is completed, you can login into the VM via SSH:
 
